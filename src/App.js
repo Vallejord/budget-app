@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Header from './Header.js'
 import Main from './Main.js'
 import Actions from './Actions.js'
+import Table from './Table.js'
 
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
                 <Header />
                 <Main />
                 <Actions />
+                <Table />
             </div>
 
         )
