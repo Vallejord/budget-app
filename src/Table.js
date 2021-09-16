@@ -13,25 +13,29 @@ const TableHeader = () => {
   )
 }
 
-const TableBody = () => {
-  return (
-    <tbody>
-      <tr>
-        <td>12/8</td>
-        <td>$300</td>
-        <td>fafafa</td>
-        <td>expense</td>
+const TableBody = (props) => {
+  const rows = props.operationsData.map((row, index) => {
+    return (
+      <tr key={index}>
+        <td>{row.date}</td>
+        <td>{row.amount}</td>
+        <td>{row.concept}</td>
+        <td>{row.type}</td>
       </tr>
-    </tbody>
+    )
+  })
+  return (
+    <tbody>{rows}</tbody>
   )
 }
 
 class Table extends Component {
   render() {
+    const {operationsData} = this.props
     return (
       <table>
         <TableHeader />
-        <TableBody />
+        <TableBody operationsData={operationsData} />
       </table>
     )
   }
