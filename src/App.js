@@ -8,7 +8,7 @@ import Table from './Table.js'
 class App extends Component {
     render() {
         return (
-            <div className="app">
+            <div className="container">
                 <Header />
                 <Main />
                 <Actions />
