@@ -21,6 +21,9 @@ const TableBody = (props) => {
         <td>{row.amount}</td>
         <td>{row.concept}</td>
         <td>{row.type}</td>
+        <td>
+          <button onClick={() => props.removeOperation(index)}>Delete</button>
+        </td>
       </tr>
     )
   })
@@ -29,16 +32,15 @@ const TableBody = (props) => {
   )
 }
 
-class Table extends Component {
-  render() {
-    const {operationsData} = this.props
-    return (
-      <table>
-        <TableHeader />
-        <TableBody operationsData={operationsData} />
-      </table>
-    )
-  }
+const Table = (props) => {
+  const {operationData, removeOperation} = props
+
+  return (
+    <table>
+      <TableHeader />
+      <TableBody operationData={operationData} removeOperation={removeOperation} />
+    </table>
+  )
 }
 
 export default Table
