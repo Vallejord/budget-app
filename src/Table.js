@@ -14,7 +14,7 @@ const TableHeader = () => {
 }
 
 const TableBody = (props) => {
-  const rows = props.operationsData.map((row, index) => {
+  const rows = props.operationData.map((row, index) => {
     return (
       <tr key={index}>
         <td>{row.date}</td>

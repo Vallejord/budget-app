@@ -8,29 +8,13 @@ import Table from './Table.js'
 class App extends Component {
 
     state = {
-        operations: [
-            {
-                date: "12/8",
-                amount: 300,
-                concept: "fafafa",
-                type: "expense",
-            },
-            {
-                date: "11/8",
-                amount: 200,
-                concept: "nesquik",
-                type: "expense",
-            },
-            {
-                date: "10/8",
-                amount: 500,
-                concept: "sueldo",
-                type: "income",
-            },
-        ], 
-    };
+        operations: [], 
+    }
 
     removeOperation = (index) => {
+
+        const {operations} = this.state;
+
         this.setState({
             operations: operations.filter((operation, i) => {
                 return i !== index
@@ -39,13 +23,15 @@ class App extends Component {
     }
 
     render() {
+
+        const { operations } = this.state
         
         return (
             <div className="container">
                 <Header />
                 <Main />
                 <Actions />
-                <Table operationsData={operations} removeOperation={this.removeOperation} />
+                <Table operationData={operations} removeOperation={this.removeOperation} />
             </div>
 
         )
